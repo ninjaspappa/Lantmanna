@@ -1,21 +1,114 @@
 import type { Metadata } from 'next';
+import { MapPin, Phone, Mail, Clock, Building2 } from 'lucide-react';
+import ContactMap from '@/components/ContactMap';
+import { openingHours } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
-  title: 'Kontakt',
+  title: 'Kontakt & Hitta hit',
   description:
-    'Besöksadress, telefon, e-post och öppettider till Fjärås Lantmanna. Hitta hit via karta.',
+    'Besöksadress, telefon, e-post och öppettider till Fjärås Lantmanna i Fjärås utanför Kungsbacka. Hitta hit via karta och få vägbeskrivning.',
+  alternates: { canonical: '/kontakt' },
 };
 
 export default function KontaktPage() {
   return (
-    <section className="container py-16">
-      {/* TODO: Agent 2 fyller i org-nr, adress, e-post, karta (conditional på cookie consent) */}
-      <h1 className="font-display text-4xl font-semibold tracking-tight text-primary md:text-6xl">
-        Kontakt
-      </h1>
-      <p className="mt-4 max-w-2xl text-lg text-foreground/70">
-        Placeholder — ersätts av Agent 2.
-      </p>
-    </section>
+    <article className="bg-cream">
+      <header className="border-b border-border/60 bg-white/40">
+        <div className="container py-16 md:py-20">
+          <p className="text-sm font-medium uppercase tracking-wider text-primary/80">Kontakt</p>
+          <h1 className="mt-3 font-display text-4xl font-semibold text-primary md:text-6xl">
+            Kontakt &amp; hitta hit
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-foreground/75">
+            Välkommen in i butiken i Fjärås, eller hör av dig via telefon eller e-post — vi hjälper
+            gärna till.
+          </p>
+        </div>
+      </header>
+
+      <div className="container grid gap-12 py-16 md:grid-cols-2 md:py-20">
+        <div className="space-y-8">
+          <section>
+            <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-primary">
+              <MapPin className="h-5 w-5" aria-hidden />
+              Besöksadress
+            </h2>
+            {/* TODO: Jesper — fyll i gatuadress, postnummer och ort */}
+            <address className="mt-3 not-italic text-foreground/85">
+              <p>TODO: Gatuadress, Fjärås</p>
+              <p>TODO: Postnummer Fjärås</p>
+            </address>
+          </section>
+
+          <section>
+            <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-primary">
+              <Phone className="h-5 w-5" aria-hidden />
+              Telefon
+            </h2>
+            {/* TODO: Jesper — bekräfta butikens telefonnummer */}
+            <p className="mt-3 text-foreground/85">
+              <a href="tel:+46" className="underline hover:text-primary">
+                TODO: 0300-XX XX XX
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-primary">
+              <Mail className="h-5 w-5" aria-hidden />
+              E-post
+            </h2>
+            {/* TODO: Jesper — fyll i e-postadress */}
+            <p className="mt-3 text-foreground/85">
+              <a href="mailto:" className="underline hover:text-primary">
+                TODO: info@lantmanna.nu
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-primary">
+              <Building2 className="h-5 w-5" aria-hidden />
+              Organisationsnummer
+            </h2>
+            {/* TODO: Jesper — fyll i org-nr (svensk konsumentlag kräver synligt org-nr) */}
+            <p className="mt-3 text-foreground/85">TODO: XXXXXX-XXXX</p>
+          </section>
+
+          <section>
+            <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-primary">
+              <Clock className="h-5 w-5" aria-hidden />
+              Öppettider
+            </h2>
+            {/* TODO: Jesper — bekräfta öppettider (lib/openingHours.ts) */}
+            <dl className="mt-3 space-y-1.5 text-foreground/85">
+              <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <dt>Måndag–Fredag</dt>
+                <dd className="font-medium">{openingHours.mondayToFriday}</dd>
+              </div>
+              <div className="flex justify-between border-b border-border/60 pb-1.5">
+                <dt>Lördag</dt>
+                <dd className="font-medium">{openingHours.saturday}</dd>
+              </div>
+              <div className="flex justify-between">
+                <dt>Söndag</dt>
+                <dd className="font-medium">{openingHours.sunday}</dd>
+              </div>
+            </dl>
+          </section>
+        </div>
+
+        <section id="karta" className="scroll-mt-24">
+          <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-primary">
+            <MapPin className="h-5 w-5" aria-hidden />
+            Hitta hit
+          </h2>
+          <p className="mt-2 mb-4 text-foreground/75">
+            Fjärås Lantmanna ligger i Fjärås, några minuter från E6 söder om Kungsbacka.
+          </p>
+          <ContactMap />
+        </section>
+      </div>
+    </article>
   );
 }

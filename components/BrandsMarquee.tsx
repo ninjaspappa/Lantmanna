@@ -49,6 +49,7 @@ function BrandItem({ name, logo }: { name: string; logo: string }) {
     );
   }
   return (
+    // eslint-disable-next-line @next/next/no-img-element -- small lazy-loaded logos in marquee; plain <img> is intentional per plan.md
     <img
       src={logo}
       alt={name}
