@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
@@ -11,13 +12,24 @@ export const metadata: Metadata = {
 export default function OmOssPage() {
   return (
     <article className="bg-cream">
-      <header className="border-b border-border/60 bg-white/40">
-        <div className="container py-16 md:py-24">
-          <p className="text-sm font-medium uppercase tracking-wider text-primary/80">Om oss</p>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-primary md:text-6xl">
+      <header className="relative overflow-hidden border-b border-border/60 bg-primary text-primary-foreground">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=2000&q=80"
+            alt="Svenskt landskap med gård och åkrar"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/70 to-primary" />
+        </div>
+        <div className="container relative py-20 md:py-28">
+          <p className="text-sm font-medium uppercase tracking-wider text-cream/80">Om oss</p>
+          <h1 className="mt-3 font-display text-4xl font-semibold md:text-6xl">
             100 år av lanthandel i Fjärås
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-foreground/75">
+          <p className="mt-6 max-w-2xl text-lg text-cream/90">
             Vi har sålt foder, frön och redskap till bönder och villaägare i Fjärås sedan
             mellankrigstiden. Sortimentet har förändrats — viljan att hjälpa till har inte.
           </p>
@@ -40,6 +52,18 @@ export default function OmOssPage() {
             stugan, och färg till det som behöver målas om. Och så — sedan flera år tillbaka — de
             gula jordsäckarna som blivit något av butikens signum under våren.
           </p>
+
+          <figure className="my-4 overflow-hidden rounded-2xl">
+            <div className="relative aspect-video">
+              <Image
+                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80"
+                alt="Röd lantgård i svensk sommarkväll"
+                fill
+                sizes="(max-width: 768px) 100vw, 800px"
+                className="object-cover"
+              />
+            </div>
+          </figure>
 
           <h2 className="font-display text-2xl font-semibold text-primary pt-6">
             Familjeägd tradition
@@ -70,6 +94,27 @@ export default function OmOssPage() {
               har vi hållit fast vid i 100 år, och det tänker vi fortsätta med.&rdquo;
             </p>
           </blockquote>
+
+          <figure className="my-4 grid grid-cols-2 gap-3">
+            <div className="relative aspect-square overflow-hidden rounded-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80"
+                alt="Foderhyllor i lanthandel"
+                fill
+                sizes="(max-width: 768px) 50vw, 400px"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80"
+                alt="Häst i svensk hage"
+                fill
+                sizes="(max-width: 768px) 50vw, 400px"
+                className="object-cover"
+              />
+            </div>
+          </figure>
 
           <h2 className="font-display text-2xl font-semibold text-primary pt-6">
             Lokal kännedom

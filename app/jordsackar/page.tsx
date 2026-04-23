@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import JordsackSection from '@/components/JordsackSection';
 
 export const metadata: Metadata = {
@@ -41,6 +42,69 @@ export default function JordsackarPage() {
   return (
     <>
       <JordsackSection variant="full" />
+
+      {/* Mer om jorden */}
+      <section className="bg-cream py-16 md:py-24">
+        <div className="container grid gap-12 md:grid-cols-[1.1fr_1fr] md:items-center">
+          <div className="max-w-xl space-y-5 text-foreground/85 [&>p]:leading-relaxed">
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-primary md:text-4xl">
+              Planteringsjord av riktigt bra kvalité
+            </h2>
+            <p>
+              Plantjord 50 är en näringsrik planteringsjord i 50-liters säck, perfekt för rabatten,
+              pallkragen, krukan och uppfräschningen av gräsmattan. Jorden är sållad, luftig och
+              lätt att arbeta med — precis som en lantbutik ska sälja jord.
+            </p>
+            <p>
+              Vi tar in Plantjord 50 på pall hela säsongen så hyllorna är alltid fyllda när våren
+              kommer. Säckarna står under tak på gården, så du slipper blöta säckar och kan lasta
+              själv direkt i bagaget. Behöver du fler än en pall? Säg till i kassan — vi fixar
+              det.
+            </p>
+            <p className="rounded-2xl border border-earth/30 bg-earth/5 p-5 font-medium text-foreground">
+              <strong className="font-display text-lg text-earth">Billigast på jorden.</strong>{' '}
+              17,90 kr/säck — och det är inte ett rea-pris. Det är vad vi tar, hela säsongen.
+              Ingen mängdrabatt, för vi kan inte göra det billigare än det redan är.
+            </p>
+          </div>
+
+          <figure className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border/60 shadow-xl">
+            <Image
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+              alt="Lantlig miljö — jord och trädgård i Fjärås"
+              fill
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="object-cover"
+            />
+          </figure>
+        </div>
+      </section>
+
+      {/* Så räknar du */}
+      <section className="bg-primary py-16 text-primary-foreground md:py-20">
+        <div className="container grid gap-10 md:grid-cols-3">
+          <div>
+            <h2 className="font-display text-3xl font-semibold md:text-4xl">
+              Så räknar du ut hur mycket jord du behöver
+            </h2>
+            <p className="mt-4 text-cream/85">
+              Enkel tumregel: tänk på ytan du ska fylla × djupet i cm × 10 = liter jord.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-cream/20 bg-cream/10 p-6">
+            <h3 className="font-display text-xl font-semibold">Pallkrage (120×80 cm)</h3>
+            <p className="mt-2 text-cream/85">
+              Fylld 20 cm djup = ca 192 liter → <strong>4 säckar Plantjord 50</strong>.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-cream/20 bg-cream/10 p-6">
+            <h3 className="font-display text-xl font-semibold">Rabatt 10 m² × 10 cm</h3>
+            <p className="mt-2 text-cream/85">
+              Ca 1 000 liter → <strong>20 säckar</strong> (lite mer än en halvpall).
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-cream py-16 md:py-24">
         <div className="container max-w-3xl">

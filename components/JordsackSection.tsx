@@ -13,19 +13,16 @@ const pricing = [
     label: 'Styck',
     price: '17,90 kr',
     note: 'Plantjord 50 – 50 liter per säck.',
-    todo: false,
   },
   {
     label: 'Halvpall',
-    price: '[xx] kr',
-    note: 'Ca 18 säckar — för lilla trädgården.',
-    todo: true,
+    price: '322 kr',
+    note: '18 säckar × 17,90 kr. För lilla trädgården.',
   },
   {
     label: 'Helpall',
-    price: '[xx] kr',
-    note: 'Ca 36 säckar — för hela projektet.',
-    todo: true,
+    price: '644 kr',
+    note: '36 säckar × 17,90 kr. För hela projektet.',
   },
 ] as const;
 
@@ -99,26 +96,14 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
                     {p.label}
                   </div>
                   <div className="mt-2 font-display text-3xl font-semibold text-cream">
-                    {p.label === 'Styck' ? (
-                      p.price
-                    ) : p.label === 'Halvpall' ? (
-                      <>
-                        {p.price}
-                        {/* TODO: Jesper — halvpall-pris */}
-                      </>
-                    ) : (
-                      <>
-                        {p.price}
-                        {/* TODO: Jesper — helpall-pris */}
-                      </>
-                    )}
+                    {p.price}
                   </div>
                   <p className="mt-2 text-sm text-cream/80">{p.note}</p>
                 </div>
               ))}
             </div>
             <p className="mt-3 text-sm text-cream/70">
-              Priser inkl. moms. Hämtas i butiken.
+              Priser inkl. moms. Ingen mängdrabatt — priset är redan billigast på jorden. Hämtas i butiken.
             </p>
 
             {/* Steps — shown in full, abbreviated in compact */}
@@ -180,7 +165,7 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
               <ShareLocationButton
                 url="https://lantmanna.nu/jordsackar"
                 title="Plantjord 50 hos Fjärås Lantmanna"
-                text="Billigast på jorden — 17,90 kr/säck, 50 liter planteringsjord"
+                text="Billigast på jorden — 17,90 kr/säck (50 L), 644 kr helpall"
                 className="border-cream text-cream hover:bg-cream hover:text-earth focus-visible:ring-cream focus-visible:ring-offset-earth"
               />
             </div>
@@ -201,8 +186,8 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
           {/* Image */}
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl border border-cream/20 shadow-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=1200&q=80"
-              alt="Matjord och trädgårdsredskap — gula jordsäckarna hos Fjärås Lantmanna"
+              src="/images/plantjord-50.jpg"
+              alt="Plantjord 50 – 50 liters gul planteringsjord-säck från Fjärås Lantmanna, staplad i trädgård"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
