@@ -36,6 +36,11 @@ const config: Config = {
           light: '#C9A96E',
           foreground: '#FAF7F0',
         },
+        sunny: {
+          DEFAULT: '#E3B300',
+          dark: '#B88F00',
+          foreground: '#2A1F05',
+        },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
