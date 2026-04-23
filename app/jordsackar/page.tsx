@@ -113,8 +113,8 @@ export default function JordsackarPage() {
 
           <figure className="relative aspect-[4/5] overflow-hidden rounded-3xl border-4 border-sunny-foreground/10 shadow-xl">
             <Image
-              src="/images/plantjord-100.png"
-              alt="Pall med Plantjord-säckar i butiksmiljö"
+              src="/images/plantjord-50.png"
+              alt="Plantjord 50 – 50 liters gula jordsäckar staplade i trädgård"
               fill
               sizes="(max-width: 768px) 100vw, 500px"
               className="object-cover"
@@ -192,6 +192,24 @@ export default function JordsackarPage() {
                 <p className="mt-3 text-sunny-foreground/85">{item.a}</p>
               </details>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final bild — plantjord-200 som avslutande 16:9-panorama */}
+      <section className="relative aspect-video max-h-[60vh] w-full overflow-hidden">
+        <ParallaxImage
+          src="/images/plantjord-200.png"
+          alt="Plantjord hos Fjärås Lantmanna — fyll pallen, fyll våren"
+          strength={0.2}
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-sunny-dark/70 via-sunny/10 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0">
+          <div className="container py-8 md:py-12">
+            <p className="font-display text-2xl font-semibold text-sunny-foreground drop-shadow-sm md:text-4xl">
+              Vi ses i Fjärås — pallen är fylld.
+            </p>
           </div>
         </div>
       </section>
