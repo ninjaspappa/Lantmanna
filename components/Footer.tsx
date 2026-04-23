@@ -9,13 +9,14 @@ export default function Footer() {
       <div className="container grid gap-10 py-12 md:grid-cols-3">
         <div>
           <h3 className="font-display text-lg font-semibold">Fjärås Lantmanna</h3>
-          {/* TODO: fill in real contact details (Agent 2) */}
           <p className="mt-3 text-sm text-primary-foreground/80">
-            Besöksadress: TODO
+            Fjärås Lantmannaväg 11
             <br />
-            Telefon: TODO
+            439 74 Fjärås
             <br />
-            E-post: TODO
+            <a href="tel:+46300540005" className="hover:text-primary-foreground">
+              0300-54 00 05
+            </a>
           </p>
         </div>
 

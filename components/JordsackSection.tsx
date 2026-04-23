@@ -11,20 +11,20 @@ interface JordsackSectionProps {
 const pricing = [
   {
     label: 'Styck',
-    price: '19 kr',
-    note: 'Perfekt för en rabatt eller kruka.',
+    price: '17,90 kr',
+    note: 'Plantjord 50 – 50 liter per säck.',
     todo: false,
   },
   {
     label: 'Halvpall',
     price: '[xx] kr',
-    note: 'Ca 30 säckar — för lilla trädgården.',
+    note: 'Ca 18 säckar — för lilla trädgården.',
     todo: true,
   },
   {
     label: 'Helpall',
     price: '[xx] kr',
-    note: 'Ca 60 säckar — för hela projektet.',
+    note: 'Ca 36 säckar — för hela projektet.',
     todo: true,
   },
 ] as const;
@@ -33,8 +33,7 @@ const steps = [
   {
     icon: MapPin,
     title: 'Kör till butiken',
-    // TODO: Jesper — exakt gatuadress till Fjärås Stationsväg
-    body: 'Fjärås Stationsväg (TODO gatuadress). Pallen står alltid under tak vid lagret.',
+    body: 'Fjärås Lantmannaväg 11, 439 74 Fjärås. Pallen står alltid under tak vid lagret.',
   },
   {
     icon: Package,
@@ -82,10 +81,11 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
                 isCompact ? 'text-3xl md:text-5xl' : 'text-4xl md:text-6xl',
               )}
             >
-              Gula jordsäckarna – fyll egen jord
+              Plantjord 50 – gula jordsäckarna
             </h2>
             <p className="mt-5 max-w-xl text-lg text-cream/90 md:text-xl">
-              Hämta billig matjord på pall direkt i butiken — alltid under tak, alltid redo.
+              <strong className="font-semibold">Billigast på jorden</strong> — planteringsjord av
+              riktigt bra kvalité. Hämta direkt i butiken, alltid under tak, alltid redo.
             </p>
 
             {/* Pricing */}
@@ -179,8 +179,8 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
               </Link>
               <ShareLocationButton
                 url="https://lantmanna.nu/jordsackar"
-                title="Gula jordsäckarna hos Fjärås Lantmanna"
-                text="19 kr/st — fyll egen matjord direkt i butiken"
+                title="Plantjord 50 hos Fjärås Lantmanna"
+                text="Billigast på jorden — 17,90 kr/säck, 50 liter planteringsjord"
                 className="border-cream text-cream hover:bg-cream hover:text-earth focus-visible:ring-cream focus-visible:ring-offset-earth"
               />
             </div>

@@ -4,9 +4,8 @@ import { useCallback } from 'react';
 import { useCookieConsent } from '@/components/CookieBanner';
 import { MapPin } from 'lucide-react';
 
-// TODO: Jesper — bekräfta exakta koordinater för butiken (approximation: Fjärås centrum).
-const LAT = 57.4333;
-const LNG = 12.1833;
+const LAT = 57.438151;
+const LNG = 12.153275;
 const LABEL = 'Fjärås Lantmanna';
 
 // Google Maps embed URL — no API key required for `?q=lat,lng` form.

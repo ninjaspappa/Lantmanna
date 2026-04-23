@@ -44,7 +44,7 @@ export default function Hero() {
             href="/jordsackar"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-earth px-6 py-3.5 text-sm font-semibold text-earth-foreground shadow-lg shadow-black/20 transition hover:bg-earth/90"
           >
-            Jordsäckar nu 19 kr/st
+            Plantjord 50 – 17,90 kr/säck
             <span aria-hidden>→</span>
           </Link>
           <Link

@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import JordsackSection from '@/components/JordsackSection';
 
 export const metadata: Metadata = {
-  title: 'Jordsäckar i Fjärås – 19 kr/st hos Lantmanna',
+  title: 'Plantjord 50 – 17,90 kr/säck hos Fjärås Lantmanna',
   description:
-    'Billig matjord i Fjärås/Kungsbacka: styckpris 19 kr, halvpall och helpall. Fyll dina gula jordsäckar själv och hämta direkt i butiken — alltid under tak.',
+    'Billigast på jorden — Plantjord 50 i Fjärås/Kungsbacka: 17,90 kr/säck (50 L), halvpall och helpall. Planteringsjord av riktigt bra kvalité, alltid under tak.',
   openGraph: {
-    title: 'Jordsäckar i Fjärås – 19 kr/st hos Lantmanna',
+    title: 'Plantjord 50 – 17,90 kr/säck hos Fjärås Lantmanna',
     description:
-      'Billig matjord i Fjärås/Kungsbacka: 19 kr/styck, hämta på pall i butiken. Gula jordsäckar, alltid under tak.',
+      'Plantjord 50 – 17,90 kr/säck, 50 L planteringsjord. Hämta på pall direkt i butiken i Fjärås. Alltid under tak.',
     type: 'website',
     url: '/jordsackar',
   },

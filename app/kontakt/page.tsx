@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { MapPin, Phone, Mail, Clock, Building2 } from 'lucide-react';
 import ContactMap from '@/components/ContactMap';
-import { openingHours } from '@/lib/openingHours';
+import { openingHours, openingHoursNote } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
   title: 'Kontakt & Hitta hit',
@@ -33,10 +33,9 @@ export default function KontaktPage() {
               <MapPin className="h-5 w-5" aria-hidden />
               Besöksadress
             </h2>
-            {/* TODO: Jesper — fyll i gatuadress, postnummer och ort */}
             <address className="mt-3 not-italic text-foreground/85">
-              <p>TODO: Gatuadress, Fjärås</p>
-              <p>TODO: Postnummer Fjärås</p>
+              <p>Fjärås Lantmannaväg 11</p>
+              <p>439 74 Fjärås</p>
             </address>
           </section>
 
@@ -45,10 +44,9 @@ export default function KontaktPage() {
               <Phone className="h-5 w-5" aria-hidden />
               Telefon
             </h2>
-            {/* TODO: Jesper — bekräfta butikens telefonnummer */}
             <p className="mt-3 text-foreground/85">
-              <a href="tel:+46" className="underline hover:text-primary">
-                TODO: 0300-XX XX XX
+              <a href="tel:+46300540005" className="underline hover:text-primary">
+                0300-54 00 05
               </a>
             </p>
           </section>
@@ -80,7 +78,6 @@ export default function KontaktPage() {
               <Clock className="h-5 w-5" aria-hidden />
               Öppettider
             </h2>
-            {/* TODO: Jesper — bekräfta öppettider (lib/openingHours.ts) */}
             <dl className="mt-3 space-y-1.5 text-foreground/85">
               <div className="flex justify-between border-b border-border/60 pb-1.5">
                 <dt>Måndag–Fredag</dt>
@@ -95,6 +92,7 @@ export default function KontaktPage() {
                 <dd className="font-medium">{openingHours.sunday}</dd>
               </div>
             </dl>
+            <p className="mt-3 text-sm text-foreground/65">{openingHoursNote}</p>
           </section>
         </div>
 

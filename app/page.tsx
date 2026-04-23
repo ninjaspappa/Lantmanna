@@ -5,12 +5,12 @@ import Hero from '@/components/Hero';
 import ServicesGrid from '@/components/ServicesGrid';
 import BrandsMarquee from '@/components/BrandsMarquee';
 import JordsackSection from '@/components/JordsackSection';
-import { openingHours } from '@/lib/openingHours';
+import { openingHours, openingHoursNote } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
   title: 'Lanthandel i Fjärås sedan 1925 – Fjärås Lantmanna',
   description:
-    'Fjärås Lantmanna — lanthandel i Fjärås utanför Kungsbacka. Foder, trädgård, arbetskläder, gasol och de gula jordsäckarna nu 19 kr/st.',
+    'Fjärås Lantmanna — lanthandel i Fjärås utanför Kungsbacka. Foder, trädgård, arbetskläder, gasol och Plantjord 50 – billigast på jorden, 17,90 kr/säck.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Lanthandel i Fjärås sedan 1925 – Fjärås Lantmanna',
@@ -74,10 +74,7 @@ export default function HomePage() {
                 <dd className="font-medium">{openingHours.sunday}</dd>
               </div>
             </dl>
-            <p className="mt-4 text-xs text-primary-foreground/70">
-              {/* TODO: Jesper — bekräfta öppettider (lib/openingHours.ts) */}
-              Öppettider uppdateras vid helgdagar.
-            </p>
+            <p className="mt-4 text-xs text-primary-foreground/70">{openingHoursNote}</p>
           </div>
         </div>
       </section>
