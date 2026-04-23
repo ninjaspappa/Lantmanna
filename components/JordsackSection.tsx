@@ -34,13 +34,13 @@ const steps = [
   },
   {
     icon: Package,
-    title: 'Fyll säckarna själv',
-    body: 'Ta spaden, fyll så mycket du vill. Matjorden är sållad och redo för rabatten.',
+    title: 'Lasta säckarna',
+    body: 'Färdigfyllda 50-liters säckar står redo på pallen. Lasta direkt i bagaget, på släpet eller pickupen — inget krångel.',
   },
   {
     icon: CreditCard,
     title: 'Betala i kassan',
-    body: 'Kort, Swish eller faktura — som det passar dig bäst.',
+    body: 'Kort eller faktura för företagskunder. Behöver du hel pall eller större mängd — vi löser allt direkt på stående fot.',
   },
 ];
 
@@ -154,10 +154,10 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
                   <MapPin className="h-4 w-4" aria-hidden /> Hämta i butiken
                 </li>
                 <li className="flex items-center gap-2">
-                  <Package className="h-4 w-4" aria-hidden /> Fyll själv under tak
+                  <Package className="h-4 w-4" aria-hidden /> Färdiga säckar under tak
                 </li>
                 <li className="flex items-center gap-2">
-                  <CreditCard className="h-4 w-4" aria-hidden /> Kort, Swish eller faktura
+                  <CreditCard className="h-4 w-4" aria-hidden /> Kort eller faktura
                 </li>
               </ul>
             )}

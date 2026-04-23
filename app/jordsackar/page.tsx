@@ -3,6 +3,8 @@ import Image from 'next/image';
 import JordsackSection from '@/components/JordsackSection';
 import ParallaxImage from '@/components/ParallaxImage';
 import CatPaws from '@/components/CatPaws';
+import MotionSection from '@/components/MotionSection';
+import SunDivider from '@/components/SunDivider';
 
 export const metadata: Metadata = {
   title: 'Plantjord 50 – 17,90 kr/säck hos Fjärås Lantmanna',
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
 const faqs: { q: string; a: string }[] = [
   {
     q: 'Hur betalar jag?',
-    a: 'Du betalar i kassan — kort, Swish eller faktura för företagskunder. Ingen förbeställning behövs för enstaka säckar.',
+    a: 'Du betalar i kassan — kort eller faktura för företagskunder. Ingen förbeställning behövs för enstaka säckar.',
   },
   {
     q: 'När kan jag hämta?',
@@ -28,11 +30,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: 'Är jorden bra för odling?',
-    a: 'Ja, det är sållad matjord som passar för rabatter, pallkragar och gräsmatta. Vill du ha extra näring för köksväxter kan du blanda med kompost eller planteringsjord.',
+    a: 'Ja, det är näringsrik och sållad planteringsjord som passar för rabatter, pallkragar, krukor och uppfräschning av gräsmattan.',
   },
   {
     q: 'Kan jag få hem jorden levererad?',
-    a: 'Vi säljer jorden som självhämtning i butiken. Hör av dig på kontaktsidan om du behöver en större mängd — vi hjälper till att hitta en lösning.',
+    a: 'Vi säljer jorden som självhämtning i butiken. Hör av dig om du behöver en större mängd — vi hjälper till att hitta en lösning.',
   },
   {
     q: 'Hur mycket jord behöver jag till 1 m²?',
@@ -49,7 +51,7 @@ export default function JordsackarPage() {
     <div className="relative bg-sunny">
       <CatPaws />
 
-      {/* 16:9 hero-bild — plantjord-100, folk som lastar säckar */}
+      {/* 16:9 hero — plantjord-100 */}
       <section className="relative aspect-video max-h-[70vh] w-full overflow-hidden">
         <ParallaxImage
           src="/images/plantjord-100.png"
@@ -58,9 +60,10 @@ export default function JordsackarPage() {
           strength={0.18}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-sunny via-sunny/30 to-sunny/0" />
+        {/* Mjukare blend mot sunny bakgrund */}
+        <div className="absolute inset-0 bg-gradient-to-t from-sunny via-sunny/40 to-sunny/0" />
         <div className="absolute inset-x-0 bottom-0">
-          <div className="container py-8 md:py-12">
+          <div className="container pb-16 pt-8 md:pb-24 md:pt-12">
             <p className="inline-flex items-center rounded-full bg-sunny-foreground px-3 py-1 text-xs font-semibold uppercase tracking-widest text-sunny">
               Våren är här
             </p>
@@ -75,10 +78,11 @@ export default function JordsackarPage() {
         </div>
       </section>
 
+      {/* Ingen hård divider — bg-sunny fortsätter sömlöst */}
       <JordsackSection variant="full" />
 
-      {/* Mer om jorden — nu gul */}
-      <section className="relative overflow-hidden bg-sunny py-16 md:py-24">
+      {/* Planteringsjord-sektionen */}
+      <MotionSection className="relative overflow-hidden bg-sunny py-16 md:py-24">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-24 top-1/3 h-96 w-96 rounded-full bg-white/30 blur-3xl"
@@ -96,13 +100,13 @@ export default function JordsackarPage() {
             <p>
               Vi tar in Plantjord 50 på pall hela säsongen så hyllorna är alltid fyllda när våren
               kommer. Säckarna står under tak på gården, så du slipper blöta säckar och kan lasta
-              själv direkt i bagaget. Behöver du fler än en pall? Säg till i kassan — vi fixar
-              det.
+              färdigfyllda direkt i bagaget. Behöver du fler än en pall? Säg till i kassan — vi
+              fixar det.
             </p>
             <p>
-              Många av våra stamkunder köper en halvpall på våren och fyller på med styckesäckar
-              under sommaren. Andra tar helpallen direkt och hjälper grannen med det som blir
-              över. Gör som du vill — vi hjälper till med lastning oavsett.
+              Många av våra stamkunder köper en halvpall på våren och kompletterar med
+              styckesäckar under sommaren. Andra tar helpallen direkt och hjälper grannen med det
+              som blir över. Gör som du vill — vi hjälper till med lastning oavsett.
             </p>
             <p className="rounded-2xl border-2 border-sunny-foreground/20 bg-white/40 p-5 font-medium text-sunny-foreground">
               <strong className="font-display text-lg">Billigast på jorden.</strong> 17,90 kr/säck
@@ -121,18 +125,21 @@ export default function JordsackarPage() {
             />
           </figure>
         </div>
-      </section>
+      </MotionSection>
 
-      {/* Så räknar du — fortsatt gul, men lite mörkare variant */}
-      <section className="relative overflow-hidden bg-sunny-dark py-16 text-sunny-foreground md:py-20">
+      {/* Mjuk våg ned i mörkare gul */}
+      <SunDivider tone="dark" />
+
+      {/* Räkne-grid på mörkare gul */}
+      <MotionSection className="relative overflow-hidden bg-sunny-dark py-16 text-sunny-foreground md:py-20">
         <div className="container grid gap-10 md:grid-cols-3">
           <div>
             <h2 className="font-display text-3xl font-semibold md:text-4xl">
               Så räknar du ut hur mycket jord du behöver
             </h2>
             <p className="mt-4 text-sunny-foreground/90">
-              Enkel tumregel: ytan × djupet i cm × 10 = liter jord. Så här ser det ut för
-              några vanliga projekt.
+              Enkel tumregel: ytan × djupet i cm × 10 = liter jord. Så här ser det ut för några
+              vanliga projekt.
             </p>
           </div>
           <div className="rounded-2xl border border-sunny-foreground/20 bg-white/30 p-6 backdrop-blur-sm">
@@ -161,10 +168,13 @@ export default function JordsackarPage() {
             </p>
           </div>
         </div>
-      </section>
+      </MotionSection>
 
-      {/* FAQ — fortsatt gul */}
-      <section className="bg-sunny py-16 md:py-24">
+      {/* Våg tillbaka upp till ljus gul */}
+      <SunDivider tone="light" flip />
+
+      {/* FAQ */}
+      <MotionSection className="bg-sunny py-16 md:py-24">
         <div className="container max-w-3xl">
           <h2 className="font-display text-3xl font-semibold tracking-tight text-sunny-foreground md:text-4xl">
             Ofta frågat
@@ -176,10 +186,7 @@ export default function JordsackarPage() {
 
           <div className="mt-8 divide-y divide-sunny-foreground/20 rounded-2xl border-2 border-sunny-foreground/15 bg-white/40 backdrop-blur-sm">
             {faqs.map((item) => (
-              <details
-                key={item.q}
-                className="group px-5 py-4 open:bg-white/60"
-              >
+              <details key={item.q} className="group px-5 py-4 open:bg-white/60">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-sunny-foreground marker:hidden">
                   <span>{item.q}</span>
                   <span
@@ -194,9 +201,9 @@ export default function JordsackarPage() {
             ))}
           </div>
         </div>
-      </section>
+      </MotionSection>
 
-      {/* Final bild — plantjord-200 som avslutande 16:9-panorama */}
+      {/* Final 16:9 panorama */}
       <section className="relative aspect-video max-h-[60vh] w-full overflow-hidden">
         <ParallaxImage
           src="/images/plantjord-200.png"
@@ -204,7 +211,7 @@ export default function JordsackarPage() {
           strength={0.2}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-sunny-dark/70 via-sunny/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-sunny-dark/80 via-sunny-dark/20 to-transparent" />
         <div className="absolute inset-x-0 bottom-0">
           <div className="container py-8 md:py-12">
             <p className="font-display text-2xl font-semibold text-sunny-foreground drop-shadow-sm md:text-4xl">
