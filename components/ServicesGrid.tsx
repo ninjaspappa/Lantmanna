@@ -32,7 +32,7 @@ const services: Service[] = [
     title: 'Hästfoder & stall',
     icon: Rabbit,
     image:
-      'https://images.unsplash.com/photo-1553284965-e2815db2e5a1?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1598974357801-cbca100e65d3?auto=format&fit=crop&w=1200&q=80',
     lead: 'Allt för hästen — marknadsledande foder, tillskott och vårdprodukter för stora och små stall.',
     brands: ['Krafft', 'Brogaarden', 'Hippo', 'Dodson & Horrell'],
   },
@@ -48,7 +48,7 @@ const services: Service[] = [
     title: 'Arbetskläder & skydd',
     icon: HardHat,
     image:
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1200&q=80',
     lead: 'Slitstarka plagg och skor för den som jobbar ute — från kängan till handsken.',
     brands: ['Carhartt', 'Blundstone', 'Jalas', 'Tegera'],
   },
@@ -64,7 +64,7 @@ const services: Service[] = [
     title: 'Gasol & VA',
     icon: Flame,
     image:
-      'https://images.unsplash.com/photo-1523419409543-a5e549c1faa6?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1484980972926-edee96e0960d?auto=format&fit=crop&w=1200&q=80',
     lead: 'Gasol till grillen och stugan, industrigas samt VA-produkter — på plats i butiken, när du behöver det.',
     brands: ['AGA', 'Air Liquide'],
   },
@@ -72,7 +72,7 @@ const services: Service[] = [
     title: 'Fiske & fritid',
     icon: Fish,
     image:
-      'https://images.unsplash.com/photo-1445264755155-f28e8eb5ec04?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=1200&q=80',
     lead: 'Spön, beten och tillbehör för fisket i Kungsbackafjorden och sjöarna runt omkring.',
     brands: ['Fladen'],
   },
