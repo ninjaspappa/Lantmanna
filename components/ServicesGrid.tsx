@@ -47,8 +47,7 @@ const services: Service[] = [
   {
     title: 'Arbetskläder & skydd',
     icon: HardHat,
-    image:
-      'https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/carhartt.png',
     lead: 'Slitstarka plagg och skor för den som jobbar ute — från kängan till handsken.',
     brands: ['Carhartt', 'Blundstone', 'Jalas', 'Tegera'],
   },
@@ -63,16 +62,14 @@ const services: Service[] = [
   {
     title: 'Gasol & VA',
     icon: Flame,
-    image:
-      'https://images.unsplash.com/photo-1484980972926-edee96e0960d?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/gasol-lantmanna.jpg',
     lead: 'Gasol till grillen och stugan, industrigas samt VA-produkter — på plats i butiken, när du behöver det.',
     brands: ['AGA', 'Air Liquide'],
   },
   {
     title: 'Fiske & fritid',
     icon: Fish,
-    image:
-      'https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/fiske-lantmanna.jpg',
     lead: 'Spön, beten och tillbehör för fisket i Kungsbackafjorden och sjöarna runt omkring.',
     brands: ['Fladen'],
   },
