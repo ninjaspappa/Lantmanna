@@ -52,7 +52,7 @@ const services: Service[] = [
     icon: HardHat,
     image: '/images/carhartt.png',
     lead: 'Slitstarka plagg och skor för den som jobbar ute — från kängan till handsken.',
-    brands: ['Carhartt', 'Blundstone', 'Jalas', 'Tegera'],
+    brands: ['Carhartt', 'Blundstone', 'Arbesko', 'Jalas', 'Tegera'],
   },
   {
     title: 'Trädgård & maskiner',
