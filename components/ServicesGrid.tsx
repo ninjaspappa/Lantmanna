@@ -45,7 +45,7 @@ const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80',
     lead: 'Mat, tillbehör och skötsel för familjens fyrbenta — svenska och nordiska kvalitetsmärken.',
-    brands: ['Bozita', 'Doggy', 'Dogman', 'Mjau'],
+    brands: ['Bozita', 'Doggy', 'Dogman', 'Mjau', 'Fodax'],
   },
   {
     title: 'Arbetskläder & skydd',
