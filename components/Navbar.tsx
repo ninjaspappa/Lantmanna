@@ -16,11 +16,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-cream/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-primary-foreground/10 bg-primary text-primary-foreground backdrop-blur-md">
       <nav className="container flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="font-display text-xl font-semibold tracking-tight text-primary"
+          className="font-display text-xl font-semibold tracking-tight text-primary-foreground"
           onClick={() => setOpen(false)}
         >
           Fjärås Lantmanna
@@ -31,7 +31,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+                className="text-sm font-medium text-primary-foreground/85 transition-colors hover:text-primary-foreground"
               >
                 {link.label}
               </Link>
@@ -43,7 +43,7 @@ export default function Navbar() {
           type="button"
           aria-label={open ? 'Stäng meny' : 'Öppna meny'}
           aria-expanded={open}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground/80 hover:bg-muted md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-primary-foreground/85 hover:bg-primary-foreground/10 md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -52,7 +52,7 @@ export default function Navbar() {
 
       <div
         className={cn(
-          'md:hidden overflow-hidden border-t border-border/60 bg-cream transition-[max-height] duration-300',
+          'md:hidden overflow-hidden border-t border-primary-foreground/15 bg-primary transition-[max-height] duration-300',
           open ? 'max-h-96' : 'max-h-0',
         )}
       >
@@ -62,7 +62,7 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-md px-2 py-3 text-base font-medium text-foreground/80 hover:bg-muted hover:text-primary"
+                className="block rounded-md px-2 py-3 text-base font-medium text-primary-foreground/85 hover:bg-primary-foreground/10 hover:text-primary-foreground"
               >
                 {link.label}
               </Link>

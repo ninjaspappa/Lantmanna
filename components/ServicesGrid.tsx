@@ -8,6 +8,8 @@ import {
   Fish,
   PaintRoller,
   Rabbit,
+  Hexagon,
+  Tractor,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -16,7 +18,8 @@ type Service = {
   icon: LucideIcon;
   image: string;
   lead: string;
-  brands: string[];
+  brands?: string[];
+  hint?: string;
 };
 
 const services: Service[] = [
@@ -60,11 +63,12 @@ const services: Service[] = [
     brands: ['Honda', 'Ryobi', 'Gardena', 'Oregon'],
   },
   {
-    title: 'Gasol & VA',
+    title: 'Gasol och Gas',
     icon: Flame,
     image: '/images/gasol-lantmanna.jpg',
-    lead: 'Gasol till grillen och stugan, industrigas samt VA-produkter — på plats i butiken, när du behöver det.',
+    lead: 'Gasol till grillen och stugan, svetsgas och industrigas — på plats i butiken, när du behöver det.',
     brands: ['AGA', 'Air Liquide'],
+    hint: 'Vi byter ut din gasolflaska eller svetsgas — välkommen in!',
   },
   {
     title: 'Fiske & fritid',
@@ -80,6 +84,20 @@ const services: Service[] = [
       'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80',
     lead: 'Färg för ute och inne, rengöring och kemtekniskt — rätt burk för rätt jobb.',
     brands: ['Teknos', 'Gelia', 'Carapax'],
+  },
+  {
+    title: 'Biodling',
+    icon: Hexagon,
+    image:
+      'https://images.unsplash.com/photo-1568526381923-caf3fd520382?auto=format&fit=crop&w=1200&q=80',
+    lead: 'Allt biodlaren behöver — ramar, kupor, slungor, dräkter och vax. Vi hjälper både nya och erfarna biodlare.',
+  },
+  {
+    title: 'Mark & Anläggning',
+    icon: Tractor,
+    image:
+      'https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1200&q=80',
+    lead: 'För dig som anlägger trädgård, bygger stenmur eller gräver in en ny rabatt — material och redskap som håller.',
   },
 ];
 
@@ -123,16 +141,23 @@ export default function ServicesGrid() {
                     {s.title}
                   </h3>
                   <p className="mt-2 text-sm text-foreground/70">{s.lead}</p>
-                  <ul className="mt-4 flex flex-wrap gap-1.5">
-                    {s.brands.map((b) => (
-                      <li
-                        key={b}
-                        className="rounded-full border border-border bg-cream px-2.5 py-0.5 text-xs font-medium text-foreground/75"
-                      >
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                  {s.hint && (
+                    <p className="mt-3 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-medium text-primary">
+                      {s.hint}
+                    </p>
+                  )}
+                  {s.brands && s.brands.length > 0 && (
+                    <ul className="mt-4 flex flex-wrap gap-1.5">
+                      {s.brands.map((b) => (
+                        <li
+                          key={b}
+                          className="rounded-full border border-border bg-cream px-2.5 py-0.5 text-xs font-medium text-foreground/75"
+                        >
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </li>
             );

@@ -15,14 +15,9 @@ const pricing = [
     note: 'Plantjord 50 – 50 liter per säck.',
   },
   {
-    label: 'Halvpall',
-    price: '322 kr',
-    note: '18 säckar × 17,90 kr. För lilla trädgården.',
-  },
-  {
     label: 'Helpall',
-    price: '644 kr',
-    note: '36 säckar × 17,90 kr. För hela projektet.',
+    price: '913 kr',
+    note: '51 säckar × 17,90 kr. För hela projektet.',
   },
 ] as const;
 
@@ -30,12 +25,12 @@ const steps = [
   {
     icon: MapPin,
     title: 'Kör till butiken',
-    body: 'Fjärås Lantmannaväg 11, 439 74 Fjärås. Pallen står alltid under tak vid lagret.',
+    body: 'Fjärås Lantmannaväg 11, 439 74 Fjärås. Hitta säckarna ute vid parkeringen där andra kunder lastar.',
   },
   {
     icon: Package,
     title: 'Lasta säckarna',
-    body: 'Färdigfyllda 50-liters säckar står redo på pallen. Lasta direkt i bagaget, på släpet eller pickupen — inget krångel.',
+    body: 'Lasta direkt i bagaget, på släpet eller pickupen — inget krångel. Vi har tyvärr inga lånesläp. Vill du ha hjälp att lyfta pall, säg till i butiken så hjälper vi dig.',
   },
   {
     icon: CreditCard,
@@ -94,7 +89,7 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
             </p>
 
             {/* Pricing */}
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {pricing.map((p) => (
                 <div
                   key={p.label}
@@ -107,6 +102,12 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
                     {p.price}
                   </div>
                   <p className="mt-2 text-sm text-sunny-foreground/80">{p.note}</p>
+                  {p.label === 'Helpall' && (
+                    <p className="mt-3 rounded-lg bg-sunny-foreground/10 px-3 py-2 text-xs text-sunny-foreground/85">
+                      Pallen kostar <strong>260 kr</strong> i pant — varav{' '}
+                      <strong>130 kr</strong> får du tillbaka när du lämnar in tom pall.
+                    </p>
+                  )}
                 </div>
               ))}
             </div>

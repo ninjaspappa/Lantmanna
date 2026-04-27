@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 border-t border-border/60 bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground">
       <div className="container grid gap-10 py-12 md:grid-cols-3">
         <div>
           <h3 className="font-display text-lg font-semibold">Fjärås Lantmanna</h3>
