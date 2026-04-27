@@ -6,14 +6,14 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-primary text-primary-foreground">
-      {/* Lantmannen-figur längst ner till höger, ingen padding */}
-      <div className="pointer-events-none absolute bottom-0 right-0 z-0 h-48 w-32 select-none md:h-72 md:w-52 lg:h-80 lg:w-60">
+    <footer className="relative bg-primary text-primary-foreground">
+      {/* Lantmannen-figur — sticker upp ovanför footern, ingen padding */}
+      <div className="pointer-events-none absolute bottom-0 right-0 z-20 h-56 w-40 select-none sm:h-72 sm:w-56 md:h-96 md:w-64 lg:h-[28rem] lg:w-80">
         <Image
           src="/images/lantmannen.png"
           alt=""
           fill
-          sizes="(max-width: 768px) 128px, 240px"
+          sizes="(max-width: 640px) 160px, (max-width: 1024px) 256px, 320px"
           className="object-contain object-bottom"
           aria-hidden
         />
