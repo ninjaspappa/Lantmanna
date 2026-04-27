@@ -97,9 +97,10 @@ export default function OmOssPage() {
 
           <figure className="my-4 grid grid-cols-2 gap-3">
             <div className="relative aspect-square overflow-hidden rounded-2xl">
+              {/* TODO: dropp egen Volvo BM-bild i public/images/traktor.jpg om denna inte funkar */}
               <Image
-                src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=800&q=80"
-                alt="Foderhyllor i lanthandel"
+                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+                alt="Röd traktor på svensk åker"
                 fill
                 sizes="(max-width: 768px) 50vw, 400px"
                 className="object-cover"
@@ -108,7 +109,7 @@ export default function OmOssPage() {
             <div className="relative aspect-square overflow-hidden rounded-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80"
-                alt="Häst i svensk hage"
+                alt="Säd och svenska åkrar"
                 fill
                 sizes="(max-width: 768px) 50vw, 400px"
                 className="object-cover"

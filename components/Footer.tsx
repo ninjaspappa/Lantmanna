@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { openingHours } from '@/lib/openingHours';
 
@@ -5,8 +6,20 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container grid gap-10 py-12 md:grid-cols-3">
+    <footer className="relative overflow-hidden bg-primary text-primary-foreground">
+      {/* Lantmannen-figur längst ner till höger, ingen padding */}
+      <div className="pointer-events-none absolute bottom-0 right-0 z-0 h-48 w-32 select-none md:h-72 md:w-52 lg:h-80 lg:w-60">
+        <Image
+          src="/images/lantmannen.png"
+          alt=""
+          fill
+          sizes="(max-width: 768px) 128px, 240px"
+          className="object-contain object-bottom"
+          aria-hidden
+        />
+      </div>
+
+      <div className="container relative z-10 grid gap-10 py-12 pr-32 md:grid-cols-3 md:pr-52 lg:pr-60">
         <div>
           <h3 className="font-display text-lg font-semibold">Fjärås Lantmanna</h3>
           <p className="mt-3 text-sm text-primary-foreground/80">
@@ -22,7 +35,7 @@ export default function Footer() {
 
         <div>
           <h3 className="font-display text-lg font-semibold">Öppettider</h3>
-          <ul className="mt-3 space-y-1 text-sm text-primary-foreground/80">
+          <ul className="mt-3 space-y-0.5 text-sm leading-tight text-primary-foreground/80">
             <li>Mån–Fre: {openingHours.mondayToFriday}</li>
             <li>Lördag: {openingHours.saturday}</li>
             <li>Söndag: {openingHours.sunday}</li>
@@ -33,35 +46,42 @@ export default function Footer() {
           <h3 className="font-display text-lg font-semibold">Snabblänkar</h3>
           <ul className="mt-3 space-y-1 text-sm">
             <li>
-              <Link href="/jordsackar" className="text-primary-foreground/80 hover:text-primary-foreground">
+              <Link
+                href="/jordsackar"
+                className="text-primary-foreground/80 hover:text-primary-foreground"
+              >
                 Jordsäckar
               </Link>
             </li>
             <li>
-              <Link href="/om-oss" className="text-primary-foreground/80 hover:text-primary-foreground">
+              <Link
+                href="/om-oss"
+                className="text-primary-foreground/80 hover:text-primary-foreground"
+              >
                 Om oss
               </Link>
             </li>
             <li>
-              <Link href="/kontakt" className="text-primary-foreground/80 hover:text-primary-foreground">
+              <Link
+                href="/kontakt"
+                className="text-primary-foreground/80 hover:text-primary-foreground"
+              >
                 Kontakt
-              </Link>
-            </li>
-            <li>
-              <Link href="/integritet" className="text-primary-foreground/80 hover:text-primary-foreground">
-                Integritetspolicy
               </Link>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/15">
-        <div className="container flex flex-col items-center justify-between gap-2 py-4 text-xs text-primary-foreground/70 sm:flex-row">
-          <p>© {year} Fjärås Lantmanna</p>
-          <Link href="/integritet" className="hover:text-primary-foreground">
-            Integritetspolicy
-          </Link>
+      <div className="relative z-10 border-t border-primary-foreground/15">
+        <div className="container py-4 pr-32 text-xs text-primary-foreground/70 md:pr-52 lg:pr-60">
+          <p>
+            © {year} Fjärås Lantmanna
+            <span className="mx-2 text-primary-foreground/40">—</span>
+            <Link href="/integritet" className="hover:text-primary-foreground">
+              Integritetspolicy
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
