@@ -95,8 +95,7 @@ const services: Service[] = [
   {
     title: 'Mark & Anläggning',
     icon: Tractor,
-    image:
-      'https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/mark-anlaggning.jpg',
     lead: 'För dig som anlägger trädgård, bygger stenmur eller gräver in en ny rabatt — material och redskap som håller.',
   },
 ];
