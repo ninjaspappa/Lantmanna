@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { MapPin, Clock, Phone, Wrench } from 'lucide-react';
+import { MapPin, Clock, Phone, Wrench, Youtube } from 'lucide-react';
 import Hero from '@/components/Hero';
 import ServicesGrid from '@/components/ServicesGrid';
 import BrandsMarquee from '@/components/BrandsMarquee';
@@ -66,7 +66,7 @@ export default function HomePage() {
                 ✦ Service, slipning & reservdelar
               </li>
             </ul>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/kontakt"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
@@ -74,6 +74,15 @@ export default function HomePage() {
                 Hör av dig
                 <Phone className="h-4 w-4" aria-hidden />
               </Link>
+              <a
+                href="https://www.youtube.com/@grasklipparmannen69"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-white/60 px-5 py-2.5 text-sm font-medium text-foreground/75 transition hover:border-foreground/30 hover:text-foreground"
+              >
+                <Youtube className="h-4 w-4 text-[#FF0000]/80" aria-hidden />
+                Se och följ oss på YouTube
+              </a>
             </div>
           </div>
         </div>
