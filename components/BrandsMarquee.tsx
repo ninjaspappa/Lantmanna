@@ -74,34 +74,57 @@ export default function BrandsMarquee() {
         </p>
       </div>
 
-      <div className="group relative mt-10 overflow-hidden">
-        {/* Edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-cream to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-cream to-transparent" />
+      {/* Mobil: swipa själv. Desktop: auto-scroll-marquee. */}
+      <div className="lm-wrap group relative mt-10">
+        {/* Edge fades — bara på desktop där marquee snurrar */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-24 bg-gradient-to-r from-cream to-transparent md:block" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-24 bg-gradient-to-l from-cream to-transparent md:block" />
 
-        <div className="lm-marquee flex w-max items-center">
+        <div className="lm-marquee flex w-max items-center px-4 md:px-0">
           {[...brands, ...brands].map((b, i) => (
             <BrandItem key={`${b.name}-${i}`} name={b.name} logo={b.logo} />
           ))}
         </div>
       </div>
 
+      <p className="container mt-4 text-xs text-foreground/55 md:hidden">
+        ← Svep för att se alla varumärken →
+      </p>
+
       <style jsx>{`
-        @keyframes lm-marquee {
-          from {
-            transform: translateX(0);
+        /* Mobil: touch-scroll, ingen animation */
+        .lm-wrap {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x proximity;
+          scrollbar-width: none;
+        }
+        .lm-wrap::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Desktop: auto-marquee, ingen manuell scroll */
+        @media (min-width: 768px) {
+          .lm-wrap {
+            overflow-x: hidden;
           }
-          to {
-            transform: translateX(-50%);
+          @keyframes lm-marquee {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+          .lm-marquee {
+            animation: lm-marquee 45s linear infinite;
+            will-change: transform;
+          }
+          .group:hover .lm-marquee {
+            animation-play-state: paused;
           }
         }
-        .lm-marquee {
-          animation: lm-marquee 45s linear infinite;
-          will-change: transform;
-        }
-        .group:hover .lm-marquee {
-          animation-play-state: paused;
-        }
+
         @media (prefers-reduced-motion: reduce) {
           .lm-marquee {
             animation: none;
