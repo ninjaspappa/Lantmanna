@@ -1,8 +1,8 @@
 // Öppettider för Fjärås Lantmanna.
 export const openingHours = {
-  mondayToFriday: '07:00–18:00',
-  saturday: '09:00–17:00',
-  sunday: '09:00–17:00',
+  mondayToFriday: '06:30–18:00',
+  saturday: '09:00–16:00',
+  sunday: '10:00–15:00',
 } as const;
 
 export type OpeningHours = typeof openingHours;

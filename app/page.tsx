@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { MapPin, Clock, Phone, Wrench, Youtube } from 'lucide-react';
 import Hero from '@/components/Hero';
 import ServicesGrid from '@/components/ServicesGrid';
-import BrandsMarquee from '@/components/BrandsMarquee';
+// import BrandsMarquee from '@/components/BrandsMarquee'; // tillfälligt dold — komponent kvar för senare
 import JordsackSection from '@/components/JordsackSection';
 import { openingHours, openingHoursNote } from '@/lib/openingHours';
 
@@ -26,7 +26,7 @@ export default function HomePage() {
       <Hero />
       <JordsackSection />
       <ServicesGrid />
-      <BrandsMarquee />
+      {/* <BrandsMarquee /> — tillfälligt dold på begäran, koden behålls */}
 
       {/* Verkstad på gården */}
       <section className="bg-cream py-20">
