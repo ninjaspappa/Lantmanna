@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import ServicesGrid from '@/components/ServicesGrid';
 // import BrandsMarquee from '@/components/BrandsMarquee'; // tillfälligt dold — komponent kvar för senare
 import JordsackSection from '@/components/JordsackSection';
+import FacebookFeed from '@/components/FacebookFeed';
 import { openingHours, openingHoursNote } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function HomePage() {
       <JordsackSection />
       <ServicesGrid />
       {/* <BrandsMarquee /> — tillfälligt dold på begäran, koden behålls */}
+      <FacebookFeed />
 
       {/* Verkstad på gården */}
       <section className="bg-cream py-20">

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Facebook, Instagram } from 'lucide-react';
 import { openingHours } from '@/lib/openingHours';
 
 export default function Footer() {
@@ -31,6 +32,26 @@ export default function Footer() {
               0300-54 00 05
             </a>
           </p>
+          <div className="mt-4 flex gap-2">
+            <a
+              href="https://www.facebook.com/p/Fj%C3%A4r%C3%A5s-Lantmanna-100063622535503/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Följ Fjärås Lantmanna på Facebook"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition hover:bg-primary-foreground/20"
+            >
+              <Facebook className="h-4 w-4" aria-hidden />
+            </a>
+            <a
+              href="https://www.instagram.com/fjaras_lantmanna/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Följ Fjärås Lantmanna på Instagram"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground transition hover:bg-primary-foreground/20"
+            >
+              <Instagram className="h-4 w-4" aria-hidden />
+            </a>
+          </div>
         </div>
 
         <div>

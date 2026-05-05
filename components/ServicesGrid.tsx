@@ -111,8 +111,8 @@ const services: Service[] = [
     title: 'Hemkörning',
     icon: Truck,
     image: '/images/hemkorning-fjaras.png',
-    lead: 'Måndag och torsdag — vi kör hem dina varor med kranlastbil. Max 5 pallar per leverans, inom Kungsbacka kommun.',
-    hint: '390 kr inkl. moms per leverans. Ring eller fråga i butiken så bokar vi en tid.',
+    lead: '4 dagar i veckan — måndag till torsdag kör vi hem dina varor med kranlastbil. Max 5 pallar per leverans, inom Kungsbacka kommun.',
+    hint: '390 kr inkl. moms per leverans. Ring butiken 0300-54 00 05 eller direkt till Mikael i lastbilen 0736-27 27 28 så bokar vi en tid.',
   },
 ];
 
