@@ -104,15 +104,14 @@ const services: Service[] = [
     title: 'Infästning & skruv',
     icon: Wrench,
     image:
-      'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1620207418302-439b387441b0?auto=format&fit=crop&w=1200&q=80',
     lead: 'Skruv, spik, beslag och infästning — för altanen, taket, staketet eller renoveringen. Vi hjälper dig hitta rätt dimension.',
     brands: ['Essve', 'Gunnebo', 'Bahco'],
   },
   {
     title: 'Hemkörning',
     icon: Truck,
-    image:
-      'https://images.unsplash.com/photo-1543699936-c901ddbf0c05?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/hemkorning-fjaras.png',
     lead: 'Måndag och torsdag — vi kör hem dina varor med kranlastbil. Max 5 pallar per leverans, inom Kungsbacka kommun.',
     hint: '390 kr inkl. moms per leverans. Ring eller fråga i butiken så bokar vi en tid.',
   },
