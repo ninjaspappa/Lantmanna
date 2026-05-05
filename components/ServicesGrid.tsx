@@ -103,8 +103,7 @@ const services: Service[] = [
   {
     title: 'Infästning & skruv',
     icon: Wrench,
-    image:
-      'https://images.unsplash.com/photo-1620207418302-439b387441b0?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/infastning.jpg',
     lead: 'Skruv, spik, beslag och infästning — för altanen, taket, staketet eller renoveringen. Vi hjälper dig hitta rätt dimension.',
     brands: ['Essve', 'Gunnebo', 'Bahco'],
   },
