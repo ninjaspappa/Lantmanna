@@ -215,7 +215,8 @@ export default function JordsackarPage() {
         <div className="absolute inset-x-0 bottom-0">
           <div className="container py-8 md:py-12">
             <p className="font-display text-2xl font-semibold text-sunny-foreground drop-shadow-sm md:text-4xl">
-              Vi ses i Fjärås — pallen är fylld.
+              Gårdsplanen är fylld med gula säckar — och såklart annan jord som passar ditt
+              projekt.
             </p>
           </div>
         </div>
