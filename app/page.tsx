@@ -48,13 +48,12 @@ export default function HomePage() {
               Vi har en verkstad på gården
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-foreground/80">
-              Tillsammans hjälper vi dig med allt från traktorer till motorsågar — service,
-              reparationer och slitdelar. Besök verkstaden, lämna in det som strular, och avsluta
-              affären i butikens kassa.
+              Vi servar och lagar små maskiner — från motorsågen till åkgräsklipparen. Lämna in
+              det som strular, så fixar vi det och avslutar affären i butikens kassa.
             </p>
             <ul className="mt-6 grid gap-2 text-sm text-foreground/75 sm:grid-cols-2">
               <li className="rounded-lg bg-white/60 px-3 py-2 ring-1 ring-border/60">
-                ✦ Traktorer & lantbruksmaskiner
+                ✦ Åkgräsklippare
               </li>
               <li className="rounded-lg bg-white/60 px-3 py-2 ring-1 ring-border/60">
                 ✦ Motorsågar & röjsågar

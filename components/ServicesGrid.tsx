@@ -61,7 +61,7 @@ const services: Service[] = [
     icon: Flower2,
     image:
       'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80',
-    lead: 'Gräsklippare, motorsågar, bevattning och trädgårdsredskap — för både villan och gården.',
+    lead: 'Vi är stora på jord — utöver vår kända gula säck har vi ett brett utbud som passar alla projekt. Dessutom gräsklippare, motorsågar, bevattning och trädgårdsredskap för både villan och gården.',
     brands: ['Honda', 'Ryobi', 'Gardena', 'Oregon'],
   },
   {
