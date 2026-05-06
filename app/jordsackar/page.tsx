@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import JordsackSection from '@/components/JordsackSection';
 import ParallaxImage from '@/components/ParallaxImage';
-import CatPaws from '@/components/CatPaws';
 import MotionSection from '@/components/MotionSection';
 import SunDivider from '@/components/SunDivider';
 
@@ -49,8 +48,6 @@ const faqs: { q: string; a: string }[] = [
 export default function JordsackarPage() {
   return (
     <div className="relative bg-sunny">
-      <CatPaws />
-
       {/* 16:9 hero — plantjord-100 */}
       <section className="relative aspect-video max-h-[70vh] w-full overflow-hidden">
         <ParallaxImage
@@ -186,8 +183,8 @@ export default function JordsackarPage() {
 
           <div className="mt-8 divide-y divide-sunny-foreground/20 rounded-2xl border-2 border-sunny-foreground/15 bg-white/40 backdrop-blur-sm">
             {faqs.map((item) => (
-              <details key={item.q} className="group px-5 py-4 open:bg-white/60">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-sunny-foreground marker:hidden">
+              <details key={item.q} className="group open:bg-white/60">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-display text-lg font-semibold text-sunny-foreground marker:hidden hover:bg-white/30">
                   <span>{item.q}</span>
                   <span
                     aria-hidden
@@ -196,7 +193,7 @@ export default function JordsackarPage() {
                     +
                   </span>
                 </summary>
-                <p className="mt-3 text-sunny-foreground/85">{item.a}</p>
+                <p className="px-5 pb-4 text-sunny-foreground/85">{item.a}</p>
               </details>
             ))}
           </div>
@@ -214,7 +211,7 @@ export default function JordsackarPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-sunny-dark/80 via-sunny-dark/20 to-transparent" />
         <div className="absolute inset-x-0 bottom-0">
           <div className="container py-8 md:py-12">
-            <p className="font-display text-2xl font-semibold text-sunny-foreground drop-shadow-sm md:text-4xl">
+            <p className="font-display text-2xl font-semibold text-white drop-shadow-md md:text-4xl">
               Gårdsplanen är fylld med gula säckar — och såklart annan jord som passar ditt
               projekt.
             </p>

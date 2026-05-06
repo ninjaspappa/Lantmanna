@@ -3,6 +3,7 @@ import { Fraunces, Inter } from 'next/font/google';
 import Script from 'next/script';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CatPaws from '@/components/CatPaws';
 import './globals.css';
 
 const inter = Inter({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="sv" className={`${inter.variable} ${fraunces.variable}`}>
       <body className="min-h-screen bg-cream text-foreground antialiased">
         <Navbar />
+        <CatPaws />
         <main className="min-h-[60vh]">{children}</main>
         <Footer />
         <Script

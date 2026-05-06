@@ -173,9 +173,9 @@ export default function JordsackSection({ variant = 'full' }: JordsackSectionPro
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
               <ShareLocationButton
-                url="https://lantmanna.nu/jordsackar"
-                title="Plantjord 50 hos Fjärås Lantmanna"
-                text="Billigast på jorden — 17,90 kr/säck (50 L), 644 kr helpall"
+                url="https://www.google.com/maps/search/?api=1&query=Fj%C3%A4r%C3%A5s+Lantmannav%C3%A4g+11%2C+439+74+Fj%C3%A4r%C3%A5s"
+                title="Fjärås Lantmanna — Lantmannaväg 11"
+                text="Hitta hit: Fjärås Lantmannaväg 11, 439 74 Fjärås"
                 className="border-sunny-foreground/40 text-sunny-foreground hover:bg-sunny-foreground hover:text-sunny focus-visible:ring-sunny-foreground focus-visible:ring-offset-sunny"
               />
             </div>
