@@ -50,6 +50,16 @@ export default function CatPaws() {
           opacity: 0;
           animation: paw-step 14s ease-in-out infinite both;
         }
+        /*
+         * 4 tassar synliga i taget: nyast = mörkast (ledande tass högst upp),
+         * bakre tass har tonats ut mest. Varje tass går igenom 4 stegs-fönster:
+         *   0 → 0.9 (placeras, ledande)
+         *   1 steg → 0.65 (en tass framåt)
+         *   2 steg → 0.4
+         *   3 steg → 0.18 (bakre i spåret)
+         *   4 steg → 0 (borta)
+         * Med 10 tassar × 1.4s/steg = 14s total → 1 steg = 10%.
+         */
         @keyframes paw-step {
           0% {
             opacity: 0;
@@ -57,10 +67,16 @@ export default function CatPaws() {
           2% {
             opacity: 0.9;
           }
-          7% {
-            opacity: 0.9;
+          12% {
+            opacity: 0.65;
           }
-          10% {
+          22% {
+            opacity: 0.4;
+          }
+          32% {
+            opacity: 0.18;
+          }
+          40% {
             opacity: 0;
           }
           100% {
