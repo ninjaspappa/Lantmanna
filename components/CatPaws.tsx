@@ -3,9 +3,10 @@
 // Diskreta tasspår som vandrar uppåt längs höger sida — en tass i taget,
 // fejdar in och ut sekventiellt. Pausat på mobil (hidden under md).
 
+// 10 tassar × 1.4s synligt slot = 14s total. Keyframe-procenten i CSS
+// nedan är hårdkodade (styled-jsx hanterar inte dynamiska keyframe-selectorer).
 const PAW_COUNT = 10;
-const STEP_DURATION = 1.4; // sekunder per tass synlig
-const TOTAL_DURATION = PAW_COUNT * STEP_DURATION;
+const STEP_DURATION = 1.4;
 
 export default function CatPaws() {
   return (
@@ -15,7 +16,7 @@ export default function CatPaws() {
     >
       <div className="relative h-full w-full">
         {Array.from({ length: PAW_COUNT }).map((_, i) => {
-          // Distribuera över höjden, med första tassen längst ner och sista högst upp
+          // Första tassen längst ner, sista högst upp → "går uppåt"
           const topPercent = 92 - i * (84 / (PAW_COUNT - 1));
           const delay = i * STEP_DURATION;
           const isLeft = i % 2 === 0;
@@ -23,19 +24,17 @@ export default function CatPaws() {
             <svg
               key={i}
               viewBox="0 0 40 40"
-              className="cat-paw absolute h-10 w-10 text-foreground/45"
+              className="cat-paw absolute h-10 w-10"
               style={{
                 top: `${topPercent}%`,
                 left: isLeft ? '0' : '50%',
+                color: 'rgba(28, 39, 31, 0.55)',
                 transform: `rotate(${isLeft ? -12 : 12}deg)`,
                 animationDelay: `${delay}s`,
-                animationDuration: `${TOTAL_DURATION}s`,
               }}
             >
               <g fill="currentColor">
-                {/* main pad */}
                 <ellipse cx="20" cy="26" rx="7" ry="6" />
-                {/* toe beans */}
                 <ellipse cx="10" cy="16" rx="3" ry="4" />
                 <ellipse cx="17" cy="11" rx="3" ry="4" />
                 <ellipse cx="23" cy="11" rx="3" ry="4" />
@@ -49,22 +48,19 @@ export default function CatPaws() {
       <style jsx>{`
         .cat-paw {
           opacity: 0;
-          animation-name: paw-step;
-          animation-timing-function: ease-in-out;
-          animation-iteration-count: infinite;
-          animation-fill-mode: both;
+          animation: paw-step 14s ease-in-out infinite both;
         }
         @keyframes paw-step {
           0% {
             opacity: 0;
           }
-          ${((STEP_DURATION * 0.3) / TOTAL_DURATION) * 100}% {
-            opacity: 0.85;
+          2% {
+            opacity: 0.9;
           }
-          ${((STEP_DURATION * 0.7) / TOTAL_DURATION) * 100}% {
-            opacity: 0.85;
+          7% {
+            opacity: 0.9;
           }
-          ${(STEP_DURATION / TOTAL_DURATION) * 100}% {
+          10% {
             opacity: 0;
           }
           100% {
