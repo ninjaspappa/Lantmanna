@@ -14,7 +14,7 @@ export default function FacebookFeed() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <section className="bg-cream py-16 md:py-20">
+    <section className="bg-cream py-16 md:hidden">
       <div className="container">
         <div className="mb-8 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
           <div>
