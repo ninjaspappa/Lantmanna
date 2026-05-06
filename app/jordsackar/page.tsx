@@ -208,10 +208,13 @@ export default function JordsackarPage() {
           strength={0.2}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-sunny-dark/80 via-sunny-dark/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute inset-x-0 bottom-0">
           <div className="container py-8 md:py-12">
-            <p className="font-display text-2xl font-semibold text-white drop-shadow-md md:text-4xl">
+            <p
+              className="font-display text-2xl font-semibold text-white md:text-4xl"
+              style={{ textShadow: '0 2px 12px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.7)' }}
+            >
               Gårdsplanen är fylld med gula säckar — och såklart annan jord som passar ditt
               projekt.
             </p>
