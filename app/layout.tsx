@@ -4,6 +4,7 @@ import Script from 'next/script';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CatPaws from '@/components/CatPaws';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const inter = Inter({
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CatPaws />
         <main className="min-h-[60vh]">{children}</main>
         <Footer />
+        <Analytics />
         <Script
           defer
           strategy="afterInteractive"
