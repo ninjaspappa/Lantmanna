@@ -53,6 +53,13 @@ function previousMonthRange() {
   return { from: start.toISOString(), to: end.toISOString(), label };
 }
 
+function monthToDateRange() {
+  const now = new Date();
+  const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1));
+  const label = `${SWEDISH_MONTHS[start.getUTCMonth()]} ${start.getUTCFullYear()} (hittills)`;
+  return { from: start.toISOString(), to: now.toISOString(), label };
+}
+
 // ─── Vercel Analytics fetcher ──────────────────────────────────────────────
 // Endpointen är /v1/web/insights/* med projectId + teamId + från/till-tider.
 // Eftersom Vercels API kan ändras hanterar vi failures gracefully så cron
@@ -230,7 +237,8 @@ export async function GET(req: Request) {
     return new NextResponse('Unauthorized', { status: 401 });
   }
 
-  const { from, to, label } = previousMonthRange();
+  const range = new URL(req.url).searchParams.get('range');
+  const { from, to, label } = range === 'mtd' ? monthToDateRange() : previousMonthRange();
   const data = await fetchVercelAnalytics(from, to);
   const html = buildHtml(label, data);
   const subject = `Lantmanna.nu — Månadsrapport ${label}`;

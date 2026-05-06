@@ -37,3 +37,4 @@ next-env.d.ts
 
 # scripts local deps
 /scripts/node_modules
+.env*.local
