@@ -27,6 +27,3 @@ export const closedSpecialDays = [
   'Annandag jul',
   'Nyårsafton',
 ] as const;
-
-export const openingHoursNote =
-  'Stängt alla röda dagar samt julafton, nyårsafton, påskafton och midsommarafton.';
