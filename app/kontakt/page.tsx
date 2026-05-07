@@ -4,10 +4,30 @@ import ContactMap from '@/components/ContactMap';
 import { openingHours } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
-  title: 'Kontakt & Hitta hit',
+  title: 'Kontakt & hitta hit — Fjärås Lantmannaväg 11',
   description:
-    'Besöksadress, telefon, e-post och öppettider till Fjärås Lantmanna i Fjärås utanför Kungsbacka. Hitta hit via karta och få vägbeskrivning.',
+    'Besöksadress, telefon, e-post och öppettider till Fjärås Lantmanna i Fjärås utanför Kungsbacka. Karta och vägbeskrivning — 1 minut från avfart 56 (E6).',
+  keywords: [
+    'Fjärås Lantmanna kontakt',
+    'Fjärås Lantmannaväg 11',
+    'lantmanna Fjärås öppettider',
+    'lantmanna Kungsbacka telefon',
+    'hitta till Fjärås Lantmanna',
+    'avfart 56 Fjärås',
+  ],
   alternates: { canonical: '/kontakt' },
+  openGraph: {
+    title: 'Kontakt & hitta hit — Fjärås Lantmanna',
+    description:
+      'Fjärås Lantmannaväg 11, 439 74 Fjärås. Telefon 0300-54 00 05. Öppettider, karta och vägbeskrivning.',
+    url: 'https://lantmanna.nu/kontakt',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kontakt & hitta hit — Fjärås Lantmanna',
+    description: 'Adress, telefon, öppettider och karta till butiken i Fjärås.',
+  },
 };
 
 export default function KontaktPage() {

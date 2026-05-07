@@ -3,10 +3,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Om oss',
+  title: 'Om oss — 100 år av lanthandel i Fjärås',
   description:
-    'Fjärås Lantmanna — modernt detaljhandelsbolag och ekonomisk förening i Fjärås utanför Kungsbacka i ca 100 år. Brett sortiment, lokal kännedom och personlig service.',
+    'Fjärås Lantmanna — modernt detaljhandelsbolag och ekonomisk förening i Fjärås utanför Kungsbacka sedan ca 1925. Brett sortiment, lokal kännedom och personlig service.',
+  keywords: [
+    'Fjärås Lantmanna historia',
+    'lantmannaförening Fjärås',
+    'ekonomisk förening Kungsbacka',
+    'lanthandel sedan 1925',
+    'Fjärås butik historia',
+  ],
   alternates: { canonical: '/om-oss' },
+  openGraph: {
+    title: 'Om oss — 100 år av lanthandel i Fjärås',
+    description:
+      'Modernt detaljhandelsbolag och ekonomisk förening i Fjärås utanför Kungsbacka i ca 100 år.',
+    url: 'https://lantmanna.nu/om-oss',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Om oss — 100 år av lanthandel i Fjärås',
+    description: 'Modernt detaljhandelsbolag och ekonomisk förening i ca 100 år.',
+  },
 };
 
 export default function OmOssPage() {
