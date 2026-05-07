@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     'Så hanterar Fjärås Lantmanna i Kungsbacka personuppgifter, cookies och tredjepartstjänster enligt GDPR. Anonym statistik via Plausible, karta via samtycke.',
   alternates: { canonical: '/integritet' },
+  robots: { index: true, follow: true },
 };
 
 export default function IntegritetPage() {

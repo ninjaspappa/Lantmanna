@@ -4,17 +4,35 @@ import JordsackSection from '@/components/JordsackSection';
 import ParallaxImage from '@/components/ParallaxImage';
 import MotionSection from '@/components/MotionSection';
 import SunDivider from '@/components/SunDivider';
+import { JsonLd, plantjordProductJsonLd } from '@/components/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Plantjord 50 – 17,90 kr/säck hos Fjärås Lantmanna',
+  title: 'Plantjord 50 — 17,90 kr/säck hos Fjärås Lantmanna',
   description:
     'Billigast på jorden — Plantjord 50 i Fjärås/Kungsbacka: 17,90 kr/säck (50 L), halvpall och helpall. Planteringsjord av riktigt bra kvalité, alltid under tak.',
+  keywords: [
+    'Plantjord 50',
+    'plantjord Kungsbacka',
+    'planteringsjord Fjärås',
+    'jord på pall Kungsbacka',
+    'jordsäckar Halland',
+    '50 liter jord',
+    'billig jord Kungsbacka',
+    'helpall jord',
+    'halvpall jord',
+  ],
+  alternates: { canonical: '/jordsackar' },
   openGraph: {
-    title: 'Plantjord 50 – 17,90 kr/säck hos Fjärås Lantmanna',
+    title: 'Plantjord 50 — 17,90 kr/säck hos Fjärås Lantmanna',
     description:
-      'Plantjord 50 – 17,90 kr/säck, 50 L planteringsjord. Hämta på pall direkt i butiken i Fjärås. Alltid under tak.',
+      'Plantjord 50 — 17,90 kr/säck, 50 L planteringsjord. Hämta på pall direkt i butiken i Fjärås. Alltid under tak.',
     type: 'website',
-    url: '/jordsackar',
+    url: 'https://lantmanna.nu/jordsackar',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Plantjord 50 — 17,90 kr/säck',
+    description: '50 L planteringsjord på pall, alltid under tak. Fjärås Lantmanna.',
   },
 };
 
@@ -48,6 +66,7 @@ const faqs: { q: string; a: string }[] = [
 export default function JordsackarPage() {
   return (
     <div className="relative bg-sunny">
+      <JsonLd data={plantjordProductJsonLd} />
       {/* 16:9 hero — plantjord-100 */}
       <section className="relative aspect-video max-h-[70vh] w-full overflow-hidden">
         <ParallaxImage

@@ -105,7 +105,7 @@ const services: Service[] = [
     icon: Wrench,
     image: '/images/infastning.jpg',
     lead: 'Skruv, spik, beslag och infästning — för altanen, taket, staketet eller renoveringen. Vi hjälper dig hitta rätt dimension.',
-    brands: ['Essve', 'Gunnebo', 'Bahco'],
+    brands: ['V/S/B', 'Arvid Nilsson', 'FAST'],
   },
   {
     title: 'Hemkörning',

@@ -9,15 +9,34 @@ import FacebookFeed from '@/components/FacebookFeed';
 import { openingHours } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
-  title: 'Lanthandel i Fjärås sedan 1925 – Fjärås Lantmanna',
+  title: 'Lanthandel i Fjärås sedan 1925 — Fjärås Lantmanna',
   description:
-    'Fjärås Lantmanna — lanthandel i Fjärås utanför Kungsbacka. Foder, trädgård, arbetskläder, gasol och Plantjord 50 – billigast på jorden, 17,90 kr/säck.',
+    'Fjärås Lantmanna — lanthandel i Fjärås utanför Kungsbacka. Foder, trädgård, arbetskläder, gasol och Plantjord 50 (17,90 kr/säck). Personlig service i över 100 år.',
+  keywords: [
+    'lanthandel Fjärås',
+    'Fjärås Lantmanna',
+    'Kungsbacka lantmanna',
+    'foder Kungsbacka',
+    'trädgård Fjärås',
+    'arbetskläder Kungsbacka',
+    'gasol Fjärås',
+    'Plantjord 50',
+    'jordsäckar Kungsbacka',
+    'verkstad gräsklippare Kungsbacka',
+  ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Lanthandel i Fjärås sedan 1925 – Fjärås Lantmanna',
+    title: 'Lanthandel i Fjärås sedan 1925 — Fjärås Lantmanna',
     description:
       'Foder, trädgård, arbetskläder, gasol och jordsäckar i Fjärås utanför Kungsbacka. Personlig service i över 100 år.',
     url: 'https://lantmanna.nu/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Lanthandel i Fjärås sedan 1925 — Fjärås Lantmanna',
+    description:
+      'Foder, trädgård, arbetskläder, gasol och jordsäckar — personlig service i över 100 år.',
   },
 };
 
