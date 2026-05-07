@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { MapPin, Phone, Mail, Clock, Wrench } from 'lucide-react';
 import ContactMap from '@/components/ContactMap';
-import { openingHours, openingHoursNote } from '@/lib/openingHours';
+import { openingHours } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
   title: 'Kontakt & Hitta hit',
@@ -48,7 +48,6 @@ export default function KontaktPage() {
                 <dd className="font-medium">{openingHours.sunday}</dd>
               </div>
             </dl>
-            <p className="mt-3 text-sm text-foreground/65">{openingHoursNote}</p>
           </section>
 
           <section>

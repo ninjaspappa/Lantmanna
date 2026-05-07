@@ -6,7 +6,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 // import BrandsMarquee from '@/components/BrandsMarquee'; // tillfälligt dold — komponent kvar för senare
 import JordsackSection from '@/components/JordsackSection';
 import FacebookFeed from '@/components/FacebookFeed';
-import { openingHours, openingHoursNote } from '@/lib/openingHours';
+import { openingHours } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
   title: 'Lanthandel i Fjärås sedan 1925 – Fjärås Lantmanna',
@@ -135,7 +135,6 @@ export default function HomePage() {
                 <dd className="font-medium">{openingHours.sunday}</dd>
               </div>
             </dl>
-            <p className="mt-4 text-xs text-foreground/65">{openingHoursNote}</p>
           </div>
         </div>
       </section>
