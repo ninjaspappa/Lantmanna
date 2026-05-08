@@ -34,8 +34,8 @@ export default function OmOssPage() {
       <header className="relative overflow-hidden border-b border-border/60 bg-primary text-primary-foreground">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80"
-            alt="Svensk landsbygd med röd lada och åkrar"
+            src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=2000&q=80"
+            alt="Svenskt åkerlandskap med havrefält och gård"
             fill
             priority
             sizes="100vw"
