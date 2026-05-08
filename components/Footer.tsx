@@ -102,6 +102,16 @@ export default function Footer() {
             <Link href="/integritet" className="hover:text-primary-foreground">
               Integritetspolicy
             </Link>
+            <span className="mx-2 text-primary-foreground/40">—</span>
+            Skapad av{' '}
+            <a
+              href="https://humanji.se"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground"
+            >
+              Humanji.se
+            </a>
           </p>
         </div>
       </div>
