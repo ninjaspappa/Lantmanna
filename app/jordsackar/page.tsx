@@ -122,7 +122,8 @@ export default function JordsackarPage() {
             <p>
               Många av våra stamkunder köper en halvpall på våren och kompletterar med
               styckesäckar under sommaren. Andra tar helpallen direkt och hjälper grannen med det
-              som blir över. Gör som du vill — vi hjälper till med lastning oavsett.
+              som blir över. Gör som du vill — vi lastar både halv- och helpall på släp eller
+              pickup, så du kommer hem med jorden utan krångel.
             </p>
             <p className="rounded-2xl border-2 border-sunny-foreground/20 bg-white/40 p-5 font-medium text-sunny-foreground">
               <strong className="font-display text-lg">Billigast på jorden.</strong> 17,90 kr/säck

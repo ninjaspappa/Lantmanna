@@ -22,6 +22,7 @@ type Service = {
   lead: string;
   brands?: string[];
   hint?: string;
+  note?: string;
 };
 
 const services: Service[] = [
@@ -113,6 +114,7 @@ const services: Service[] = [
     image: '/images/hemkorning-fjaras.png',
     lead: '4 dagar i veckan — måndag till torsdag kör vi hem dina varor med kranlastbil. Max 5 pallar per leverans, inom Kungsbacka kommun.',
     hint: '390 kr inkl. moms per leverans. Ring butiken 0300-54 00 05 eller direkt till Mikael i lastbilen 0736-27 27 28 så bokar vi en tid.',
+    note: 'Gäller ej gula jordsäckar.',
   },
 ];
 
@@ -159,6 +161,11 @@ export default function ServicesGrid() {
                   {s.hint && (
                     <p className="mt-3 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-xs font-medium text-primary">
                       {s.hint}
+                    </p>
+                  )}
+                  {s.note && (
+                    <p className="mt-2 rounded-lg border border-sunny-foreground/20 bg-sunny/60 px-3 py-2 text-xs font-medium text-black">
+                      {s.note}
                     </p>
                   )}
                   {s.brands && s.brands.length > 0 && (
