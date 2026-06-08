@@ -66,7 +66,7 @@ const faqs: { q: string; a: string }[] = [
 export default function JordsackarPage() {
   return (
     <div className="relative bg-sunny">
-      <JsonLd data={plantjordProductJsonLd} />
+      <JsonLd data={plantjordProductJsonLd()} />
       {/* 16:9 hero — plantjord-100 */}
       <section className="relative aspect-video max-h-[70vh] w-full overflow-hidden">
         <ParallaxImage

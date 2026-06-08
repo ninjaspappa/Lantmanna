@@ -1,9 +1,16 @@
 // JSON-LD structured data — laddas i <head> via layout.
-// Exporterar färdiga objekt; inga komponenter behövs (skickas via <script>).
+// Konstanterna är factory-funktioner så `dateModified` blir färskt vid varje
+// render/revalidate. Daglig cron i app/api/cron/refresh håller datumet rullande
+// utan att vi behöver deploya manuellt.
 
 const SITE = 'https://lantmanna.nu';
 
-export const localBusinessJsonLd = {
+function nowIso(): string {
+  return new Date().toISOString();
+}
+
+export function localBusinessJsonLd() {
+  return {
   '@context': 'https://schema.org',
   '@type': ['Store', 'LocalBusiness'],
   '@id': `${SITE}/#localbusiness`,
@@ -21,6 +28,7 @@ export const localBusinessJsonLd = {
   paymentAccepted: 'Cash, Credit Card, Invoice',
   foundingDate: '1925',
   slogan: 'Till gagn för bygden',
+  dateModified: nowIso(),
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Fjärås Lantmannaväg 11',
@@ -81,53 +89,63 @@ export const localBusinessJsonLd = {
       { '@type': 'OfferCatalog', name: 'Verkstad — service & reparation' },
     ],
   },
-} as const;
+  } as const;
+}
 
-export const websiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': `${SITE}/#website`,
-  name: 'Fjärås Lantmanna',
-  url: SITE,
-  inLanguage: 'sv-SE',
-  publisher: { '@id': `${SITE}/#localbusiness` },
-} as const;
+export function websiteJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE}/#website`,
+    name: 'Fjärås Lantmanna',
+    url: SITE,
+    inLanguage: 'sv-SE',
+    publisher: { '@id': `${SITE}/#localbusiness` },
+    dateModified: nowIso(),
+  } as const;
+}
 
-export const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': `${SITE}/#organization`,
-  name: 'Fjärås Lantmanna',
-  url: SITE,
-  logo: `${SITE}/icon.png`,
-  foundingDate: '1925',
-  legalName: 'Fjärås Lantmannaförening ek. för.',
-  sameAs: [
-    'https://www.facebook.com/fjaraslantmanna',
-    'https://www.youtube.com/@grasklipparmannen69',
-  ],
-} as const;
+export function organizationJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE}/#organization`,
+    name: 'Fjärås Lantmanna',
+    url: SITE,
+    logo: `${SITE}/icon.png`,
+    foundingDate: '1925',
+    legalName: 'Fjärås Lantmannaförening ek. för.',
+    sameAs: [
+      'https://www.facebook.com/fjaraslantmanna',
+      'https://www.youtube.com/@grasklipparmannen69',
+    ],
+    dateModified: nowIso(),
+  } as const;
+}
 
-export const plantjordProductJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  '@id': `${SITE}/jordsackar#plantjord-50`,
-  name: 'Plantjord 50',
-  description:
-    'Planteringsjord 50 liter — bra kvalité, säljs på pall under tak. 17,90 kr/säck hos Fjärås Lantmanna.',
-  brand: { '@type': 'Brand', name: 'Fjärås Lantmanna' },
-  category: 'Trädgård > Jord & anläggning',
-  image: `${SITE}/images/plantjord-50.png`,
-  offers: {
-    '@type': 'Offer',
-    price: '17.90',
-    priceCurrency: 'SEK',
-    availability: 'https://schema.org/InStock',
-    itemCondition: 'https://schema.org/NewCondition',
-    url: `${SITE}/jordsackar`,
-    seller: { '@id': `${SITE}/#localbusiness` },
-  },
-} as const;
+export function plantjordProductJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': `${SITE}/jordsackar#plantjord-50`,
+    name: 'Plantjord 50',
+    description:
+      'Planteringsjord 50 liter — bra kvalité, säljs på pall under tak. 17,90 kr/säck hos Fjärås Lantmanna.',
+    brand: { '@type': 'Brand', name: 'Fjärås Lantmanna' },
+    category: 'Trädgård > Jord & anläggning',
+    image: `${SITE}/images/plantjord-50.png`,
+    dateModified: nowIso(),
+    offers: {
+      '@type': 'Offer',
+      price: '17.90',
+      priceCurrency: 'SEK',
+      availability: 'https://schema.org/InStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      url: `${SITE}/jordsackar`,
+      seller: { '@id': `${SITE}/#localbusiness` },
+    },
+  } as const;
+}
 
 export function breadcrumbJsonLd(
   items: Array<{ name: string; path: string }>

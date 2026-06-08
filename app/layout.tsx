@@ -116,9 +116,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="sv" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
-        <JsonLd data={localBusinessJsonLd} />
-        <JsonLd data={websiteJsonLd} />
-        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={localBusinessJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={organizationJsonLd()} />
       </head>
       <body className="min-h-screen bg-cream text-foreground antialiased">
         <Navbar />
