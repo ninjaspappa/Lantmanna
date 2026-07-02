@@ -6,7 +6,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 // import BrandsMarquee from '@/components/BrandsMarquee'; // tillfälligt dold — komponent kvar för senare
 import JordsackSection from '@/components/JordsackSection';
 import FacebookFeed from '@/components/FacebookFeed';
-import { openingHours } from '@/lib/openingHours';
+import { openingHours, temporaryHours } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
   title: 'Lanthandel i Fjärås sedan 1925 — Fjärås Lantmanna',
@@ -140,6 +140,17 @@ export default function HomePage() {
               <Clock className="h-5 w-5" aria-hidden />
               Öppettider
             </h3>
+            {temporaryHours && (
+              <div className="mt-4 rounded-xl border border-sunny/50 bg-sunny/15 px-4 py-3">
+                <p className="flex items-center gap-2 text-sm font-semibold text-sunny-foreground">
+                  <span aria-hidden>☀️</span>
+                  {temporaryHours.title} — {temporaryHours.period}
+                </p>
+                <p className="mt-0.5 text-sm text-foreground/80">
+                  Vardagar {temporaryHours.weekdays}
+                </p>
+              </div>
+            )}
             <dl className="mt-4 space-y-2 text-sm">
               <div className="flex justify-between gap-6 border-b border-border/60 pb-2">
                 <dt>Måndag–Fredag</dt>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { MapPin, Phone, Mail, Clock, Wrench } from 'lucide-react';
 import ContactMap from '@/components/ContactMap';
-import { openingHours } from '@/lib/openingHours';
+import { openingHours, temporaryHours } from '@/lib/openingHours';
 
 export const metadata: Metadata = {
   title: 'Kontakt & hitta hit — Fjärås Lantmannaväg 11',
@@ -54,6 +54,17 @@ export default function KontaktPage() {
               <Clock className="h-5 w-5" aria-hidden />
               Öppettider
             </h2>
+            {temporaryHours && (
+              <div className="mt-3 rounded-xl border border-sunny/50 bg-sunny/15 px-4 py-3">
+                <p className="flex items-center gap-2 text-sm font-semibold text-sunny-foreground">
+                  <span aria-hidden>☀️</span>
+                  {temporaryHours.title} — {temporaryHours.period}
+                </p>
+                <p className="mt-0.5 text-sm text-foreground/80">
+                  Vardagar {temporaryHours.weekdays}
+                </p>
+              </div>
+            )}
             <dl className="mt-3 space-y-1.5 text-foreground/85">
               <div className="flex justify-between border-b border-border/60 pb-1.5">
                 <dt>Måndag–Fredag</dt>

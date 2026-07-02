@@ -27,3 +27,14 @@ export const closedSpecialDays = [
   'Annandag jul',
   'Nyårsafton',
 ] as const;
+
+// Tillfälliga öppettider — sätt till null när kampanjen är över.
+export const temporaryHours: {
+  title: string;
+  period: string;
+  weekdays: string;
+} | null = {
+  title: 'Sommaröppet',
+  period: 'V. 28–31',
+  weekdays: '08:00–18:00',
+};
