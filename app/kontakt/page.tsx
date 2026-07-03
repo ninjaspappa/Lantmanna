@@ -60,9 +60,20 @@ export default function KontaktPage() {
                   <span aria-hidden>☀️</span>
                   {temporaryHours.title} — {temporaryHours.period}
                 </p>
-                <p className="mt-0.5 text-sm text-foreground/80">
-                  Vardagar {temporaryHours.weekdays}
-                </p>
+                <dl className="mt-2 space-y-1 text-sm text-foreground/80">
+                  <div className="flex justify-between gap-6">
+                    <dt>Vardagar</dt>
+                    <dd className="font-medium">{temporaryHours.weekdays}</dd>
+                  </div>
+                  <div className="flex justify-between gap-6">
+                    <dt>Lördag</dt>
+                    <dd className="font-medium">{openingHours.saturday}</dd>
+                  </div>
+                  <div className="flex justify-between gap-6">
+                    <dt>Söndag</dt>
+                    <dd className="font-medium">{openingHours.sunday}</dd>
+                  </div>
+                </dl>
               </div>
             )}
             <dl className="mt-3 space-y-1.5 text-foreground/85">
